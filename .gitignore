@@ -5,3 +5,5 @@
 /.vs
 /WS2812Util/bin/Debug/net6.0-windows
 /WS2812Util/obj/Debug/net6.0-windows
+/WS2812Util/obj/Release/net6.0-windows
+/WS2812Util/bin
