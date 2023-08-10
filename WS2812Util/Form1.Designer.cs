@@ -32,11 +32,12 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             addPicBtn = new Button();
             generatePythonArray = new Button();
+            generateClangArray = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel1 = new Panel();
             picBox = new PictureBox();
             arrayTxb = new TextBox();
-            generateClangArray = new Button();
+            toBase64Btn = new Button();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -64,6 +65,7 @@
             flowLayoutPanel1.Controls.Add(addPicBtn);
             flowLayoutPanel1.Controls.Add(generatePythonArray);
             flowLayoutPanel1.Controls.Add(generateClangArray);
+            flowLayoutPanel1.Controls.Add(toBase64Btn);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -90,6 +92,16 @@
             generatePythonArray.Text = "生成图像数据Python列表代码";
             generatePythonArray.UseVisualStyleBackColor = true;
             generatePythonArray.Click += generatePythonArray_Click;
+            // 
+            // generateClangArray
+            // 
+            generateClangArray.Location = new Point(368, 3);
+            generateClangArray.Name = "generateClangArray";
+            generateClangArray.Size = new Size(178, 32);
+            generateClangArray.TabIndex = 2;
+            generateClangArray.Text = "生成图像数据C语言数组代码";
+            generateClangArray.UseVisualStyleBackColor = true;
+            generateClangArray.Click += generateClangArray_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -138,15 +150,15 @@
             arrayTxb.Size = new Size(472, 389);
             arrayTxb.TabIndex = 1;
             // 
-            // generateClangArray
+            // toBase64Btn
             // 
-            generateClangArray.Location = new Point(368, 3);
-            generateClangArray.Name = "generateClangArray";
-            generateClangArray.Size = new Size(178, 32);
-            generateClangArray.TabIndex = 2;
-            generateClangArray.Text = "生成图像数据C语言数组代码";
-            generateClangArray.UseVisualStyleBackColor = true;
-            generateClangArray.Click += generateClangArray_Click;
+            toBase64Btn.Location = new Point(552, 3);
+            toBase64Btn.Name = "toBase64Btn";
+            toBase64Btn.Size = new Size(146, 32);
+            toBase64Btn.TabIndex = 3;
+            toBase64Btn.Text = "转Base64字符串";
+            toBase64Btn.UseVisualStyleBackColor = true;
+            toBase64Btn.Click += toBase64Btn_Click;
             // 
             // Form1
             // 
@@ -176,5 +188,6 @@
         private PictureBox picBox;
         private TextBox arrayTxb;
         private Button generateClangArray;
+        private Button toBase64Btn;
     }
 }
