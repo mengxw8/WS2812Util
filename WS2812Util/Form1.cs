@@ -119,9 +119,20 @@ namespace WS2812Util
                         //获取一个像素点的颜色
                         Color pixel = bitmap.GetPixel(j, i);
                         stringBuilder.Append(String.Format("[{0},{1},{2}]", pixel.R, pixel.G, pixel.B));
+                        if (j != image.Width - 1) {
+                            stringBuilder.Append(',');
+                        }
                     }
-                    stringBuilder.Append("],\r\n");
+                    if (i != image.Height - 1)
+                    {
+                        stringBuilder.Append("],\r\n");
+                    }
+                    else {
+                        stringBuilder.Append("]\r\n");
+                    }
+                    
                 }
+                
                 stringBuilder.Append("]");
                 arrayTxb.Text = stringBuilder.ToString();
 

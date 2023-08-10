@@ -115,7 +115,7 @@
             // 
             // picBox
             // 
-            picBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            picBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             picBox.Location = new Point(36, 93);
             picBox.Name = "picBox";
             picBox.Size = new Size(217, 200);
