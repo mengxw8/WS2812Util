@@ -25,7 +25,11 @@ namespace WS2812Util
                 var image = Image.FromFile(openFileDialog.FileName);
                 if (image.Width < picBox.Width || image.Height < picBox.Height)
                 {
-                    picBox.Image = ScaleImage(image, picBox.Width, picBox.Height);
+                    picBox.Image = ReconfigurationImage(image, picBox.Width, picBox.Height);
+                }
+                else
+                {
+                    picBox.Image = image;
                 }
                 //重新选择了图片，所以要重新生成代码，原来的数据清空
                 arrayTxb.Text = "";
@@ -41,7 +45,7 @@ namespace WS2812Util
         /// <param name="dstWidth">目标图片宽</param>
         /// <param name="dstHeight">目标图片高</param>
         /// <returns></returns>
-        public Image ScaleImage(Image image, int dstWidth, int dstHeight)
+        public Image ReconfigurationImage(Image image, int dstWidth, int dstHeight)
         {
             Graphics g = null;
             try
@@ -115,7 +119,6 @@ namespace WS2812Util
                         //获取一个像素点的颜色
                         Color pixel = bitmap.GetPixel(j, i);
                         stringBuilder.Append(String.Format("[{0},{1},{2}]", pixel.R, pixel.G, pixel.B));
-                        System.Diagnostics.Debug.WriteLine(String.Format("[{0},{1},{2}]", pixel.R, pixel.G, pixel.B));
                     }
                     stringBuilder.Append("],\r\n");
                 }

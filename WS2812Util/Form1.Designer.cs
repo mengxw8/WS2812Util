@@ -93,14 +93,14 @@
             // 
             tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.6872635F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64.31274F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 300F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel2.Controls.Add(panel1, 0, 0);
             tableLayoutPanel2.Controls.Add(arrayTxb, 1, 0);
             tableLayoutPanel2.Location = new Point(3, 63);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Size = new Size(778, 395);
             tableLayoutPanel2.TabIndex = 1;
             // 
@@ -110,15 +110,15 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(271, 389);
+            panel1.Size = new Size(294, 389);
             panel1.TabIndex = 0;
             // 
             // picBox
             // 
-            picBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            picBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             picBox.Location = new Point(36, 93);
             picBox.Name = "picBox";
-            picBox.Size = new Size(194, 200);
+            picBox.Size = new Size(217, 200);
             picBox.SizeMode = PictureBoxSizeMode.StretchImage;
             picBox.TabIndex = 0;
             picBox.TabStop = false;
@@ -129,10 +129,11 @@
             // 
             arrayTxb.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             arrayTxb.Font = new Font("Microsoft YaHei UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            arrayTxb.Location = new Point(280, 3);
+            arrayTxb.Location = new Point(303, 3);
             arrayTxb.Multiline = true;
             arrayTxb.Name = "arrayTxb";
-            arrayTxb.Size = new Size(495, 389);
+            arrayTxb.ScrollBars = ScrollBars.Both;
+            arrayTxb.Size = new Size(472, 389);
             arrayTxb.TabIndex = 1;
             // 
             // Form1
