@@ -119,7 +119,8 @@ namespace WS2812Util
                         //获取一个像素点的颜色
                         Color pixel = bitmap.GetPixel(j, i);
                         stringBuilder.Append(String.Format("[{0},{1},{2}]", pixel.R, pixel.G, pixel.B));
-                        if (j != image.Width - 1) {
+                        if (j != image.Width - 1)
+                        {
                             stringBuilder.Append(',');
                         }
                     }
@@ -127,15 +128,14 @@ namespace WS2812Util
                     {
                         stringBuilder.Append("],\r\n");
                     }
-                    else {
+                    else
+                    {
                         stringBuilder.Append("]\r\n");
                     }
-                    
+
                 }
-                
                 stringBuilder.Append("]");
                 arrayTxb.Text = stringBuilder.ToString();
-
             }
         }
 
@@ -157,6 +157,42 @@ namespace WS2812Util
         private void picBox_Resize(object sender, EventArgs e)
         {
             //锁定长宽比？
+        }
+
+        private void generateClangArray_Click(object sender, EventArgs e)
+        {
+            if (path != "")
+            {
+                var image = Image.FromFile(path);
+                var bitmap = new Bitmap(image);
+                StringBuilder stringBuilder = new StringBuilder(image.Width * image.Height * 13);
+                stringBuilder.Append("{\r\n");
+                for (var i = 0; i < image.Height; i++)
+                {
+                    stringBuilder.Append("{");
+                    for (var j = 0; j < image.Width; j++)
+                    {
+                        //获取一个像素点的颜色
+                        Color pixel = bitmap.GetPixel(j, i);
+                        stringBuilder.Append(String.Format("{{{0},{1},{2}}}", pixel.R, pixel.G, pixel.B));
+                        if (j != image.Width - 1)
+                        {
+                            stringBuilder.Append(',');
+                        }
+                    }
+                    if (i != image.Height - 1)
+                    {
+                        stringBuilder.Append("},\r\n");
+                    }
+                    else
+                    {
+                        stringBuilder.Append("}\r\n");
+                    }
+
+                }
+                stringBuilder.Append("}");
+                arrayTxb.Text = stringBuilder.ToString();
+            }
         }
     }
 }

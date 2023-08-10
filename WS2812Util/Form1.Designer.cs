@@ -36,6 +36,7 @@
             panel1 = new Panel();
             picBox = new PictureBox();
             arrayTxb = new TextBox();
+            generateClangArray = new Button();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             flowLayoutPanel1.Controls.Add(addPicBtn);
             flowLayoutPanel1.Controls.Add(generatePythonArray);
+            flowLayoutPanel1.Controls.Add(generateClangArray);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(3, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -136,6 +138,16 @@
             arrayTxb.Size = new Size(472, 389);
             arrayTxb.TabIndex = 1;
             // 
+            // generateClangArray
+            // 
+            generateClangArray.Location = new Point(368, 3);
+            generateClangArray.Name = "generateClangArray";
+            generateClangArray.Size = new Size(178, 32);
+            generateClangArray.TabIndex = 2;
+            generateClangArray.Text = "生成图像数据C语言数组代码";
+            generateClangArray.UseVisualStyleBackColor = true;
+            generateClangArray.Click += generateClangArray_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -163,5 +175,6 @@
         private Panel panel1;
         private PictureBox picBox;
         private TextBox arrayTxb;
+        private Button generateClangArray;
     }
 }
