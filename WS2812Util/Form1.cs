@@ -192,13 +192,14 @@ namespace WS2812Util
                 }
                 stringBuilder.Append("}");
                 arrayTxb.Text = stringBuilder.ToString();
+                
             }
         }
 
         private void toBase64Btn_Click(object sender, EventArgs e)
         {
             if (path != "") {
-                FileStream filestream = new FileStream(path, FileMode.Open);
+                FileStream filestream = new FileStream(path, FileMode.Open, FileAccess.Read);
                 byte[] bt = new byte[filestream.Length];
                 //调用read读取方法
                 filestream.Read(bt, 0, bt.Length);
